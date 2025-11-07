@@ -17,10 +17,10 @@ mongoose.connect(process.env.MONGO_URI, {
 // Create (POST) - Add a new coin
 app.post('/coins', async (req, res) => {
     try {
-        console.log(req.body);
+        // console.log(req.body);
         const { name, symbol, price, marketCap, circulatingSupply } = req.body;
         const newCoin = new Coin({ name, symbol, price, marketCap, circulatingSupply });
-        console.log("newCoin => " + newCoin)
+        // console.log("newCoin => " + newCoin)
         const savedCoin = await newCoin.save();
 
         res.status(201).json({
